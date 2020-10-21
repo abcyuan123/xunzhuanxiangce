@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            background-color: #0f0f0f;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin-left: 42%;
+            margin-top: 22%;
+            position:absolute;
+            transform-style: preserve-3d;
+            /* 数据里 放在最外层div中使用 值越大 3D效果月不明显 */
+            /* perspective:400px */
+            /* 添加东湖效果 */
+            animation: move 30s linear infinite;
+        }
+        @keyframes move{
+            from{
+                transform: rotateX(10deg) rotateY(0deg);
+            }
+            to{
+                transform: rotateX(10deg) rotateY(360deg);
+            }
+        }
+        .maxbox{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            transform-style: preserve-3d;
+        }
+
+        .maxbox li{
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* 透明度 */
+            opacity: 0.3;
+            transition: all 3s ease;
+        }
+
+        .maxbox li:nth-child(1){
+            background-color: yellow;
+            background: url('./1.gif') no-repeat center center;
+            transform: rotateY(0deg) translateZ(100px);
+        }
+        .maxbox li:nth-child(2){
+            background-color: yellowgreen;
+            background: url('./1.gif') no-repeat center center;
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        /* 底部 */
+        .maxbox li:nth-child(3){
+            background-color: violet;
+            background: url('./1.gif') no-repeat center center;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        /* 顶部 */
+        .maxbox li:nth-child(4){
+            background-color: lightblue;
+            background: url('./1.gif') no-repeat center center;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        /* 左侧 */
+        .maxbox li:nth-child(5){
+            background-color: tomato;
+            background: url('./1.gif') no-repeat center center;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        /* 右侧 */
+        .maxbox li:nth-child(6){
+            background-color: pink;
+            background: url('./1.gif') no-repeat center center;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        /* 鼠标移入 */
+        .box:hover ul li:nth-child(1){
+            width: 400px;
+            height: 400px;
+            /* 位移 */
+            transform: translateZ(300px);
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+        .box:hover ul li:nth-child(2){
+            width: 400px;
+            height: 400px;
+            transform: rotateY(180deg) translateZ(300px);
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+
+        }
+        .box:hover ul li:nth-child(3){
+            width: 400px;
+            height: 400px;
+            transform: rotateX(-90deg) translateZ(300px);
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+        
+        
+        .box:hover ul li:nth-child(4){
+            width: 400px;
+            height: 400px;
+            transform: rotateX(90deg) translateZ(300px);
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+        .box:hover ul li:nth-child(5){
+            width: 400px;
+            height: 400px;
+            transform: rotateY(-90deg) translateZ(300px);
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+        .box:hover ul li:nth-child(6){
+            width: 400px;
+            height: 400px;
+            transform: rotateY(90deg) translateZ(300px);
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="maxbox">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+</body>
+</html>
